@@ -1,132 +1,247 @@
-<p>salaries works!</p>
-<form class="example-form container">
-    <h4>Filters</h4>
-
+<div class="filter sticky-top">
+  <div class="dummy-top"></div>
+  <form class="filter-form container text-center">
     <div *ngIf="resultData != undefined">
-        <mat-form-field appearance="fill">
-            <mat-label>Location</mat-label>
-            <mat-select (selectionChange)="selectChangeHandler($event, 'location')" [(value)]="selectedFilter.location">
-                <mat-option *ngFor="let location of resultData.filterData?.location" [value]="location">
-                    {{location}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Location</mat-label>
+        <mat-select
+          (selectionChange)="selectChangeHandler($event, 'location')"
+          [(value)]="selectedFilter.location"
+        >
+          <mat-option
+            *ngFor="let location of resultData.filterData?.location"
+            [value]="location"
+          >
+            {{ location }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-        <mat-form-field appearance="fill">
-            <mat-label>Title</mat-label>
-            <mat-select (selectionChange)="selectChangeHandler($event, 'title')" [(value)]="selectedFilter.title">
-                <mat-option *ngFor="let title of resultData.filterData.title" [value]="title">
-                    {{title}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <mat-select
+          (selectionChange)="selectChangeHandler($event, 'title')"
+          [(value)]="selectedFilter.title"
+        >
+          <mat-option
+            *ngFor="let title of resultData.filterData.title"
+            [value]="title"
+          >
+            {{ title }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-        <mat-form-field appearance="fill">
-            <mat-label>Experience</mat-label>
-            <mat-select (selectionChange)="selectChangeHandler($event, 'experience')"
-                [(value)]="selectedFilter.experience">
-                <mat-option *ngFor="let experience of resultData.filterData.experience" [value]="experience">
-                    {{experience}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Experience</mat-label>
+        <mat-select
+          (selectionChange)="selectChangeHandler($event, 'experience')"
+          [(value)]="selectedFilter.experience"
+        >
+          <mat-option
+            *ngFor="let experience of resultData.filterData.experience"
+            [value]="experience"
+          >
+            {{ experience }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-        <mat-form-field appearance="fill">
-            <mat-label>Highest Education</mat-label>
-            <mat-select (selectionChange)="selectChangeHandler($event, 'education')"
-                [(value)]="selectedFilter.education">
-                <mat-option *ngFor="let education of resultData.filterData.education" [value]="education">
-                    {{education}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Highest Education</mat-label>
+        <mat-select
+          (selectionChange)="selectChangeHandler($event, 'education')"
+          [(value)]="selectedFilter.education"
+        >
+          <mat-option
+            *ngFor="let education of resultData.filterData.education"
+            [value]="education"
+          >
+            {{ education }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-        <mat-form-field appearance="fill">
-            <mat-label>Bootcamp?</mat-label>
-            <mat-select (selectionChange)="selectChangeHandler($event, 'bootcamp')" [(value)]="selectedFilter.bootcamp">
-                <mat-option *ngFor="let bootcamp of resultData.filterData.bootcamp" [value]="bootcamp">
-                    {{bootcamp}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Bootcamp?</mat-label>
+        <mat-select
+          (selectionChange)="selectChangeHandler($event, 'bootcamp')"
+          [(value)]="selectedFilter.bootcamp"
+        >
+          <mat-option
+            *ngFor="let bootcamp of resultData.filterData.bootcamp"
+            [value]="bootcamp"
+          >
+            {{ bootcamp }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-        <mat-form-field appearance="fill">
-            <mat-label>Year of Data submission</mat-label>
-            <mat-select (selectionChange)="selectChangeHandler($event, 'year')" [(value)]="selectedFilter.year">
-                <mat-option *ngFor="let year of resultData.filterData.year" [value]="year">
-                    {{year}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Year of Data submission</mat-label>
+        <mat-select
+          (selectionChange)="selectChangeHandler($event, 'year')"
+          [(value)]="selectedFilter.year"
+        >
+          <mat-option
+            *ngFor="let year of resultData.filterData.year"
+            [value]="year"
+          >
+            {{ year }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-        <mat-form-field appearance="fill">
-            <mat-label>Industry</mat-label>
-            <mat-select (selectionChange)="selectChangeHandler($event, 'industry')" [(value)]="selectedFilter.industry">
-                <mat-option *ngFor="let industry of resultData.filterData.industry" [value]="industry">
-                    {{industry}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Industry</mat-label>
+        <mat-select
+          (selectionChange)="selectChangeHandler($event, 'industry')"
+          [(value)]="selectedFilter.industry"
+        >
+          <mat-option
+            *ngFor="let industry of resultData.filterData.industry"
+            [value]="industry"
+          >
+            {{ industry }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-        <mat-form-field appearance="fill">
-            <mat-label>FAANG/MMANGA</mat-label>
-            <mat-select (selectionChange)="selectChangeHandler($event, 'faang')" [(value)]="selectedFilter.faang">
-                <mat-option *ngFor="let faang of resultData.filterData.faang" [value]="faang">
-                    {{faang}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>FAANG/MMANGA</mat-label>
+        <mat-select
+          (selectionChange)="selectChangeHandler($event, 'faang')"
+          [(value)]="selectedFilter.faang"
+        >
+          <mat-option
+            *ngFor="let faang of resultData.filterData.faang"
+            [value]="faang"
+          >
+            {{ faang }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
+      <mat-form-field appearance="fill">
+        <mat-label>Company Size</mat-label>
+        <mat-select
+          (selectionChange)="selectChangeHandler($event, 'company_size')"
+          [(value)]="selectedFilter.company_size"
+        >
+          <mat-option
+            *ngFor="let company_size of resultData.filterData.company_size"
+            [value]="company_size"
+          >
+            {{ company_size }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-        <mat-form-field appearance="fill">
-            <mat-label>Company Size</mat-label>
-            <mat-select (selectionChange)="selectChangeHandler($event, 'company_size')"
-                [(value)]="selectedFilter.company_size">
-                <mat-option *ngFor="let company_size of resultData.filterData.company_size" [value]="company_size">
-                    {{company_size}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
-            <mat-label>Sort Salary</mat-label>
-            <mat-select (selectionChange)="sortSelection($event)" [(value)]="sortOrder">
-                <mat-option value="desc">High to low</mat-option>
-                <mat-option value="asc">Low to high</mat-option>
-            </mat-select>
-        </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Sort Salary</mat-label>
+        <mat-select
+          (selectionChange)="sortSelection($event)"
+          [(value)]="sortOrder"
+        >
+          <mat-option value="desc">High to low</mat-option>
+          <mat-option value="asc">Low to high</mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
+  </form>
+  <!-- <button mat-raised-button color="warn" *ngFor="let filter of selectedFilter">Warn X</button> -->
 
-</form>
-<!-- <button mat-raised-button color="warn" *ngFor="let filter of selectedFilter">Warn X</button> -->
-
-<div class="filter_array">
-
-    <button *ngIf="selectedFilter.location != ''" (click)="removeFilter($event,'location')" mat-raised-button
-        color="warn">{{selectedFilter.location}} X</button>
-    <button *ngIf="selectedFilter.title != ''" (click)="removeFilter($event,'title')" mat-raised-button
-        color="warn">{{selectedFilter.title}} X</button>
-    <button *ngIf="selectedFilter.experience != ''" (click)="removeFilter($event,'experience')" mat-raised-button
-        color="warn">{{selectedFilter.experience}}
-        X</button>
-    <button *ngIf="selectedFilter.education != ''" (click)="removeFilter($event,'education')" mat-raised-button
-        color="warn">{{selectedFilter.education}}
-        X</button>
-    <button *ngIf="selectedFilter.bootcamp != ''" (click)="removeFilter($event,'bootcamp')" mat-raised-button
-        color="warn">{{selectedFilter.bootcamp}} X</button>
-    <button *ngIf="selectedFilter.year != ''" (click)="removeFilter($event,'year')" mat-raised-button
-        color="warn">{{selectedFilter.year}} X</button>
-    <button *ngIf="selectedFilter.industry != ''" (click)="removeFilter($event,'industry')" mat-raised-button
-        color="warn">{{selectedFilter.industry}} X</button>
-    <button *ngIf="selectedFilter.faang != ''" (click)="removeFilter($event,'faang')" mat-raised-button
-        color="warn">{{selectedFilter.faang}} X</button>
-    <button *ngIf="selectedFilter.company_size != ''" (click)="removeFilter($event,'company_size')" mat-raised-button
-        color="warn">{{selectedFilter.company_size}}
-        X</button>
-
+  <div class="filter-buttons container text-center">
+    <button
+      *ngIf="selectedFilter.location != ''"
+      (click)="removeFilter($event, 'location')"
+      mat-raised-button
+      color="warn"
+      title="Remove filter"
+    >
+      {{ selectedFilter.location }} <span class="close">X</span>
+    </button>
+    <button
+      *ngIf="selectedFilter.title != ''"
+      (click)="removeFilter($event, 'title')"
+      mat-raised-button
+      color="warn"
+      title="Remove filter"
+    >
+      {{ selectedFilter.title }} <span class="close">X</span>
+    </button>
+    <button
+      *ngIf="selectedFilter.experience != ''"
+      (click)="removeFilter($event, 'experience')"
+      mat-raised-button
+      color="warn"
+      title="Remove filter"
+    >
+      {{ selectedFilter.experience }} <span class="close">X</span>
+    </button>
+    <button
+      *ngIf="selectedFilter.education != ''"
+      (click)="removeFilter($event, 'education')"
+      mat-raised-button
+      color="warn"
+      title="Remove filter"
+    >
+      {{ selectedFilter.education }} <span class="close">X</span>
+    </button>
+    <button
+      *ngIf="selectedFilter.bootcamp != ''"
+      (click)="removeFilter($event, 'bootcamp')"
+      mat-raised-button
+      color="warn"
+      title="Remove filter"
+    >
+      {{ selectedFilter.bootcamp }} <span class="close">X</span>
+    </button>
+    <button
+      *ngIf="selectedFilter.year != ''"
+      (click)="removeFilter($event, 'year')"
+      mat-raised-button
+      color="warn"
+      title="Remove filter"
+    >
+      {{ selectedFilter.year }} <span class="close">X</span>
+    </button>
+    <button
+      *ngIf="selectedFilter.industry != ''"
+      (click)="removeFilter($event, 'industry')"
+      mat-raised-button
+      color="warn"
+      title="Remove filter"
+    >
+      {{ selectedFilter.industry }} <span class="close">X</span>
+    </button>
+    <button
+      *ngIf="selectedFilter.faang != ''"
+      (click)="removeFilter($event, 'faang')"
+      mat-raised-button
+      color="warn"
+      title="Remove filter"
+    >
+      {{ selectedFilter.faang }} <span class="close">X</span>
+    </button>
+    <button
+      *ngIf="selectedFilter.company_size != ''"
+      (click)="removeFilter($event, 'company_size')"
+      mat-raised-button
+      color="warn"
+      title="Remove filter"
+    >
+      {{ selectedFilter.company_size }} <span class="close">X</span>
+    </button>
+  </div>
 </div>
-<div class="row">
-    <div class="col-3" *ngFor="let item of resultData?.salaryData">
-        <app-employee [userData]="item"></app-employee>
+<div class="container mt-5">
+  <div class="row">
+    <div
+      class="col-sm-12 col-md-4 col-lg-3"
+      *ngFor="let item of resultData?.salaryData"
+    >
+      <app-employee [userData]="item"></app-employee>
     </div>
+  </div>
 </div>

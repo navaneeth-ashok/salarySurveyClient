@@ -1,0 +1,14 @@
+footer {
+  background-color: rgb(126, 126, 126);
+  color: whitesmoke;
+  padding: 10px 0px;
+}
+
+footer a {
+  text-decoration: none;
+  color: wheat;
+}
+
+footer a:hover {
+  color: #fff688;
+}

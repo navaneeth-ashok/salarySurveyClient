@@ -1,0 +1,49 @@
+.filter {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 8px 7px #cbcbcb;
+
+  /* margin-top: 30px; */
+}
+
+.filter-form {
+  margin-top: 30px;
+}
+
+.filter-buttons {
+  padding-bottom: 10px;
+}
+
+.sticky-top {
+  z-index: 1;
+}
+
+.dummy-top {
+  background-color: #af0000;
+  height: 10px;
+}
+
+button.mat-warn {
+  background-color: #777777;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.close {
+  position: relative;
+  left: 0.6em;
+  top: -0.6em;
+}
+
+button.mat-warn:hover .close {
+  color: rgb(116, 0, 0);
+}
+
+@media only screen and (max-width: 600px) {
+  .filter {
+    position: relative;
+  }
+
+  button.mat-warn {
+    margin-bottom: 10px;
+  }
+}

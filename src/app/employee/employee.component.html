@@ -1,29 +1,42 @@
 <mat-card class="detail-card">
-    <mat-card-header>
-        <mat-card-title>${{userDetail.base_salary}}</mat-card-title>
-        <mat-card-subtitle>{{userDetail.title}}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-        <mat-list>
-            <mat-list-item> Location : {{userDetail.location}}</mat-list-item>
-            <mat-list-item> Experience : {{userDetail.experience}} years</mat-list-item>
-            <mat-list-item *ngIf="userDetail.bonus"> Bonus : {{userDetail.bonus}}</mat-list-item>
-            <mat-list-item *ngIf="userDetail.cash_equity"> Cash Equity : {{userDetail.cash_equity}}</mat-list-item>
-            <mat-list-item *ngIf="userDetail.stock_options"> Stock Options : {{userDetail.stock_options}}
-            </mat-list-item>
-            <mat-list-item> Highest Education : {{userDetail.highest_education}}</mat-list-item>
-            <mat-list-item *ngIf="userDetail.bootcamp"> Bootcamp : {{userDetail.bootcamp}}</mat-list-item>
-            <mat-list-item> Year : {{userDetail.year}}</mat-list-item>
-            <mat-list-item> Industry : {{userDetail.industry}}</mat-list-item>
-            <mat-list-item *ngIf="userDetail.other_industry"> Other Industry : {{userDetail.other_industry}}
-            </mat-list-item>
-            <mat-list-item *ngIf="userDetail.faang_mmanga"> FAANG/MMANGA? : {{userDetail.faang_mmanga}}</mat-list-item>
-            <mat-list-item> Company Size : {{userDetail.company_size}}</mat-list-item>
-            <!-- <mat-list-item> Date of Submission : {{userDetail.timestamp}}</mat-list-item> -->
-
-        </mat-list>
-    </mat-card-content>
-    <!-- <mat-card-footer> -->
-    <mat-card-subtitle>Submitted on {{userDetail.timestamp}}</mat-card-subtitle>
-    <!-- </mat-card-footer> -->
+  <mat-card-header>
+    <mat-card-title>${{ userDetail.base_salary }}</mat-card-title>
+    <mat-card-subtitle>{{ userDetail.title }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item> Location : {{ userDetail.location }}</mat-list-item>
+      <mat-list-item>
+        Experience : {{ userDetail.experience }} years</mat-list-item
+      >
+      <mat-list-item *ngIf="userDetail.bonus">
+        Bonus : {{ userDetail.bonus }}</mat-list-item
+      >
+      <mat-list-item *ngIf="userDetail.cash_equity">
+        Cash Equity : {{ userDetail.cash_equity }}</mat-list-item
+      >
+      <mat-list-item *ngIf="userDetail.stock_options">
+        Stock Options : {{ userDetail.stock_options }}
+      </mat-list-item>
+      <mat-list-item> Industry : {{ userDetail.industry }}</mat-list-item>
+      <mat-list-item *ngIf="userDetail.other_industry">
+        Other Industry : {{ userDetail.other_industry }}
+      </mat-list-item>
+      <mat-list-item *ngIf="userDetail.faang_mmanga">
+        FAANG/MMANGA? : {{ userDetail.faang_mmanga }}</mat-list-item
+      >
+      <mat-list-item>
+        Highest Education : {{ userDetail.highest_education }}</mat-list-item
+      >
+      <mat-list-item *ngIf="userDetail.bootcamp">
+        Bootcamp : {{ userDetail.bootcamp }}</mat-list-item
+      >
+      <mat-list-item>
+        Company Size : {{ userDetail.company_size }}</mat-list-item
+      >
+    </mat-list>
+    <mat-card-subtitle>
+      <p>Submitted on {{ userDetail.timestamp }}</p>
+    </mat-card-subtitle>
+  </mat-card-content>
 </mat-card>

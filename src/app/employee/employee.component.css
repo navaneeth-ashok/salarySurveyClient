@@ -1,0 +1,12 @@
+.mat-card-subtitle {
+  text-align: right;
+}
+
+.detail-card {
+  margin-bottom: 20px;
+}
+
+.mat-card {
+  border: 1px solid rgb(221, 221, 221);
+  box-shadow: 4px 7px 5px rgb(180, 180, 180);
+}
