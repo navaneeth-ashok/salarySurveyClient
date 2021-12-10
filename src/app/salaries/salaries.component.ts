@@ -1,10 +1,7 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-
-// Class
 import { Employee } from '../Employee';
 import { Payload } from '../Payload';
-import { ContentObserver } from '@angular/cdk/observers';
 
 @Component({
   selector: 'app-salaries',
@@ -13,11 +10,15 @@ import { ContentObserver } from '@angular/cdk/observers';
 })
 export class SalariesComponent implements OnInit {
   constructor(private httpClient: HttpClient) {}
+  // to store the payload
   resultData!: Payload;
+  // for the progress bar animation
   isLoading: boolean = true;
   isLoaded: boolean = false;
+  // to take care of sorting
   sortOrder: string = 'desc';
   sortParam: string = '-';
+  // record keeping track of the current active filters
   selectedFilter: Record<string, string> = {
     location: '',
     title: '',
@@ -29,18 +30,18 @@ export class SalariesComponent implements OnInit {
     faang: '',
     company_size: '',
   };
-  selectedLocation: string = '';
-  selectedSalary: string = '50000';
   ngOnInit(): void {
-    // this.isLoading = true;
     this.getSalaryData();
   }
 
+  // on selecting the sort field, receive the event and set the sort parameter
+  // asc = '' and desc = '-'
   sortSelection(event: any) {
     event.value == 'asc' ? (this.sortParam = '') : (this.sortParam = '-');
     this.getSalaryData();
   }
 
+  // on clicking the filter button in the result page, remove the filter from the query
   removeFilter(event: any, filter_name: string) {
     switch (filter_name) {
       case 'location':
@@ -75,11 +76,8 @@ export class SalariesComponent implements OnInit {
     this.getSalaryData();
   }
 
+  // receive the events fired when the select dropdown results are selected
   selectChangeHandler(event: any, filter_name: string) {
-    // this.selectedLocation = event.value;
-    console.log(this.selectedFilter);
-
-    console.log('Calling ' + filter_name);
     switch (filter_name) {
       case 'location':
         this.selectedFilter.location = event.value;
@@ -109,17 +107,12 @@ export class SalariesComponent implements OnInit {
         this.selectedFilter.company_size = event.value;
         break;
       default:
-      // reset filter
-    }
-    // console.log(this.selectedFilter);
-    for (let a in this.selectedFilter) {
-      console.log(this.selectedFilter[a]);
     }
     this.getSalaryData();
   }
 
+  // fetch the result from the server
   getSalaryData() {
-    // console.log('calling backend');
     this.isLoaded = false;
     this.isLoading = true;
     this.httpClient
@@ -150,8 +143,6 @@ export class SalariesComponent implements OnInit {
         this.isLoaded = true;
         this.isLoading = false;
         let employeeDetailArray = [];
-        // console.log(resp.salaryData);
-        // console.log(resp.filterData);
         for (let item of resp.salaryData) {
           let dataItem = new Employee(
             item.timestamp,
@@ -171,6 +162,8 @@ export class SalariesComponent implements OnInit {
             item.company_size
           );
           employeeDetailArray.push(dataItem);
+          // employeeDetailArray : contains information to populate the cards
+          // filterData : contains information regarding the active selectable filters
           this.resultData = new Payload(employeeDetailArray, resp.filterData);
         }
       });
