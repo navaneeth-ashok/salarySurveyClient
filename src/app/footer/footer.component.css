@@ -1,0 +1,28 @@
+footer {
+  background-color: rgb(28 28 28);
+  color: whitesmoke;
+  padding: 10px 0px;
+  height: 210px;
+}
+
+footer a {
+  text-decoration: none;
+  color: wheat;
+}
+
+footer a:hover {
+  color: #ffea00;
+}
+
+.bmc-btn-container {
+  height: 60px;
+}
+
+#coffee-icon {
+  height: 45px;
+  margin-bottom: 10px;
+}
+
+#coffee-icon:hover {
+  filter: contrast(1.2);
+}

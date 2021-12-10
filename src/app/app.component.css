@@ -7,3 +7,7 @@ h1 {
   margin: 0;
   font-size: 3em;
 }
+
+.content {
+  min-height: calc(100vh - 230px);
+}

@@ -14,6 +14,9 @@ import { MatCardModule } from '@angular/material/card';
 import { EmployeeComponent } from './employee/employee.component';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,7 @@ import { MatButtonModule } from '@angular/material/button';
     FiltersComponent,
     SalariesComponent,
     EmployeeComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +37,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatCardModule,
     MatListModule,
     MatButtonModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

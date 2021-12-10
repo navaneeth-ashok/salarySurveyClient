@@ -14,7 +14,8 @@ import { ContentObserver } from '@angular/cdk/observers';
 export class SalariesComponent implements OnInit {
   constructor(private httpClient: HttpClient) {}
   resultData!: Payload;
-  isLoaded: true = true;
+  isLoading: boolean = true;
+  isLoaded: boolean = false;
   sortOrder: string = 'desc';
   sortParam: string = '-';
   selectedFilter: Record<string, string> = {
@@ -31,6 +32,7 @@ export class SalariesComponent implements OnInit {
   selectedLocation: string = '';
   selectedSalary: string = '50000';
   ngOnInit(): void {
+    // this.isLoading = true;
     this.getSalaryData();
   }
 
@@ -117,7 +119,9 @@ export class SalariesComponent implements OnInit {
   }
 
   getSalaryData() {
-    console.log('calling backend');
+    // console.log('calling backend');
+    this.isLoaded = false;
+    this.isLoading = true;
     this.httpClient
       .get<any>(
         'http://localhost:3000/getSalaryData?location=' +
@@ -143,6 +147,8 @@ export class SalariesComponent implements OnInit {
           'base_salary'
       )
       .subscribe((resp) => {
+        this.isLoaded = true;
+        this.isLoading = false;
         let employeeDetailArray = [];
         // console.log(resp.salaryData);
         // console.log(resp.filterData);
