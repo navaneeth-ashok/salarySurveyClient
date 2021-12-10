@@ -117,7 +117,7 @@ export class SalariesComponent implements OnInit {
     this.isLoading = true;
     this.httpClient
       .get<any>(
-        'http://localhost:3000/getSalaryData?location=' +
+        'https://cs-salary-app.uc.r.appspot.com/getSalaryData?location=' +
           this.selectedFilter.location +
           '&title=' +
           this.selectedFilter.title +
