@@ -11,3 +11,7 @@ h1 {
 .content {
   min-height: calc(100vh - 230px);
 }
+
+.banner-logo {
+  height: 100px;
+}
