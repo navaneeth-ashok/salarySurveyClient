@@ -1,4 +1,8 @@
-# SalaryFrontend
+# CS Salary Insight App : Frontend
+
+This web-app is the api endpoint for the CS Salary Insight app for the Canadian employees.  
+The data provided by the api is collected from [r/cscareerquestionsCAD](https://www.reddit.com/r/cscareerquestionsCAD)  
+Please refer to the following reddit post for more information : [Salary Sharing Survey Result](https://www.reddit.com/r/cscareerquestionsCAD/comments/rbeq6z/salary_sharing_survey_and_results/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.9.
 
@@ -6,22 +10,18 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Backend
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- ExpressJS
+- MongoDB Atlas
 
-## Build
+## Related Projects
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [Salary CSV to JSON Converter : Python](https://github.com/navaneeth-ashok/salary_survey_csv_converter)
+- [CS Salary Insight App Frontend : Angular](https://github.com/navaneeth-ashok/salarySurveyClient)
+- [CS Salary Insight App Backend : ExpressJS](https://github.com/navaneeth-ashok/salarySurveyServer)
 
-## Running unit tests
+## Contributors
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [Navaneeth Ashok](https://navaneeth.dev/) : Developed backend, frontend and csv to json converter
+- [u/just_a_dev_here](https://www.reddit.com/user/just_a_dev_here/) : Conducted the survey and supplied the RAW data
