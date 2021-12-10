@@ -1,6 +1,6 @@
 # CS Salary Insight App : Frontend
 
-This web-app is the api endpoint for the CS Salary Insight app for the Canadian employees.  
+This web-app is the frontend for the CS Salary Insight app for the Canadian employees.  
 The data provided by the api is collected from [r/cscareerquestionsCAD](https://www.reddit.com/r/cscareerquestionsCAD)  
 Please refer to the following reddit post for more information : [Salary Sharing Survey Result](https://www.reddit.com/r/cscareerquestionsCAD/comments/rbeq6z/salary_sharing_survey_and_results/)
 
